@@ -25,6 +25,7 @@ include "inc-cabecalho.php";
                             <th>Nome</th>
                             <th>Ano</th>
                             <th>Tipo</th>
+                            <th>Ações</th>
                         </tr>
                     </thead>
                     <?php
@@ -47,6 +48,17 @@ include "inc-cabecalho.php";
                         else{
                             echo "<td> Single </td>";
                         }
+                        echo "<td>
+
+                        <a href='discografia-excluir.php?id={$linha_resultado['id']}'>
+                            <i class='bi bi-trash-fill'></i>
+                        </a>
+
+                        <a href='discografia-editar.php?id={$linha_resultado['id']}'>
+                            <i class='bi bi-pencil-square'></i>
+                        </a>
+                        
+                        </td>";
 
                         echo '</tr>';
                     }
