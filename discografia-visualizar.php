@@ -2,6 +2,7 @@
 
 $titulo_da_pagina = "Visualizar Discografia";
 include "inc-cabecalho.php";
+<<<<<<< Updated upstream
 
 ?>
 <body>
@@ -95,4 +96,39 @@ include "inc-cabecalho.php";
 mysqli_close($conn);
 include "inc-rodape.php";
 
+=======
+include "inc-conexao.php";
+
+$id= $_GET['id'];
+
+$sql = "SELECT * from tb_discografia_2 where id = $id";
+$resultado = mysqli_query($conn, $sql);
+
+$foto = $artista = $nome = $ano = $tipo = "";
+
+while($linha = mysqli_fetch_assoc($resultado)){
+    $artista = $linha['artista'];
+    $nome = $linha['nome'];
+    $foto = $linha['foto'];
+    $ano = $linha['ano'];
+    $tipo = $linha['tipo'];
+}
+?>
+
+<body>
+    <?php include "inc-menu.php";?>
+    <main class="container mt-5">
+        <h1>Visualizar Discografia</h1>
+        Foto: <img src="<?=$foto; ?>" alt="<?=$nome?>"> <br>
+        Artista: <?=$artista?> <br>
+        Nome do álbum: <?=$nome?> <br>
+        Ano de lançamento: <?=$ano?> <br>
+        Tipo: <?=$tipo?> <br>
+    </main>
+</body>
+
+<?php
+mysqli_close($conn); 
+include "inc-rodape.php" 
+>>>>>>> Stashed changes
 ?>

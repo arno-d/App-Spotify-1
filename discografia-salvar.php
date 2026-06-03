@@ -10,7 +10,7 @@ echo "Artista: $artista - Nome: $nome - Ano de lançamento: $ano - Tipo: $tipo -
 
 include "inc-conexao.php";
 
-$resultado = mysqli_execute_query($conn, "INSERT INTO tb_discografia(artista, nome, ano, tipo, foto) VALUES(?, ?, ?, ?, ?)", 
+$resultado = mysqli_execute_query($conn, "INSERT INTO tb_discografia_2(artista, nome, ano, tipo, foto) VALUES(?, ?, ?, ?, ?)", 
 [$artista, $nome, $ano, $tipo, $foto]);
 
 echo '<br><br>';

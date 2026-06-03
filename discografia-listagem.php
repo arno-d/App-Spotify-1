@@ -32,15 +32,19 @@ include "inc-cabecalho.php";
 
                     include "inc-conexao.php";
                     
-                    $sql = "SELECT * FROM tb_discografia ORDER BY artista, ano";
+                    $sql = "SELECT * FROM tb_discografia_2 ORDER BY artista, ano";
                     $resultado = mysqli_query($conn, $sql);
 
                     while($linha_resultado = mysqli_fetch_assoc($resultado) ){
                         echo '<tr>';
 
-                        echo "<td> {$linha_resultado['id']} </td>";
+                        echo "<td> {$linha_resultado['ID']} </td>";
                         echo "<td> {$linha_resultado['artista']} </td>";
+<<<<<<< Updated upstream
                         echo "<td> <a href='discografia-visualizar.php?id={$linha_resultado['id']}'> {$linha_resultado['nome']} </a> </td>";
+=======
+                        echo "<td> <a href= 'discografia-visualizar.php?id={$linha_resultado['id']}'>{$linharesultado['nome']} </a> </td>";
+>>>>>>> Stashed changes
                         echo "<td> {$linha_resultado['ano']} </td>";
                         if($linha_resultado['tipo'] == 'album'){
                             echo "<td> Álbum </td>";
