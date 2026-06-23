@@ -2,7 +2,6 @@
 
 $titulo_da_pagina = "Visualizar Discografia";
 include "inc-cabecalho.php";
-<<<<<<< Updated upstream
 
 ?>
 <body>
@@ -130,5 +129,5 @@ while($linha = mysqli_fetch_assoc($resultado)){
 <?php
 mysqli_close($conn); 
 include "inc-rodape.php" 
->>>>>>> Stashed changes
+
 ?>
